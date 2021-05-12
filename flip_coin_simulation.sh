@@ -13,20 +13,16 @@ else
 echo "Tail"
 ((tail_count++))
 fi
-if [ $head_count -eq 21 ] || [ $tail_count -eq 21 ]
+if [ $head_count -eq $tail_count ]
 then
-echo "limit reached"
+echo "Limit reached"
 echo "Head="$head_count"times"
 echo "Tail="$tail_count"times"
-if [ $head_count -eq 21 ]
-then
-result=$(($head_count - $tail_count))
-echo "Head won by $result"
-else
-result1=$(($tail_count - $head_count))
-echo "Tail won by $result1"
-fi
-break
+break 
 fi
 done
+
+
+
+
 
