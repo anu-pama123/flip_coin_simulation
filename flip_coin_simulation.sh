@@ -1,7 +1,6 @@
 echo "1)21 times winning program of either head or tail  2)program for tie condition"
 read -p "Enter your choice " choice
 echo "---Flip the coin---"
-for((i=0;i<20;i++))
 
 case $choice in
 1)
@@ -60,10 +59,10 @@ then
 echo "Head="$head_count
 echo "Tail="$tail_count
 echo "Number of head is equal to number of tail"
-flag=0
+flag=1
 continue
 fi
-if [ $flag ]
+if [ $flag -eq 1 ]
 then
 diff1=$(($tail_count-$head_count))
 diff2=$(($head_count-$tail_count))
