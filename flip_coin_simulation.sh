@@ -3,7 +3,7 @@ read -p "Enter your choice " choice
 echo "---Flip the coin---"
 
 case $choice in
-2)
+1)
 head_count=0
 tail_count=0
 while [ 1 ]
@@ -36,7 +36,42 @@ done
 ;;
 esac
 
-
+case $choice in
+2)
+head_count=0
+tail_count=0
+flag=0
+while [ 1 ]
+do
+random_number=$(($RANDOM%2))
+if [ $random_number -eq 1 ]
+then 
+echo "Head"
+((head_count++))
+else
+echo "Tail"
+((tail_count++))
+fi
+if [ $head_count -eq $tail_count ]
+then
+echo "Head="$head_count
+echo "Tail="$tail_count
+echo "Number of head is equal to number of tail"
+flag=0
+continue
+fi
+if [ $flag ]
+then
+diff1=$(($tail_count-$head_count))
+diff2=$(($head_count-$tail_count))
+if [ $diff1 -eq 2 ] || [ $diff2 -eq 2 ]
+then
+break
+fi
+fi
+done
+;;
+esac
 
 
 
