@@ -18,7 +18,7 @@ then
 echo "Limit reached"
 echo "Head="$head_count"times"
 echo "Tail="$tail_count"times"
-break 
+break
 fi
 done
 
